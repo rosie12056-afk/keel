@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://house-keel.dev/schemas/action.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "action_id", "observed_action", "declared_intent", "intent_revisions", "created_at"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "action_id": { "type": "string", "minLength": 3 },
+    "observed_action": { "type": "string", "minLength": 1 },
+    "declared_intent": { "type": "string", "minLength": 1 },
+    "intent_revisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["revision_id", "declared_intent", "created_at"],
+        "properties": {
+          "revision_id": { "type": "string", "minLength": 3 },
+          "previous_revision_id": { "type": "string", "minLength": 3 },
+          "declared_intent": { "type": "string", "minLength": 1 },
+          "revision_reason": { "type": "string" },
+          "created_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

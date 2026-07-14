@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://house-keel.dev/schemas/resignature.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "resignature_id", "subject_id", "source_ref", "current_position", "changed_because", "carry_forward", "rejected_or_revised", "unresolved_tension", "explanation_scope", "created_at"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "resignature_id": { "type": "string", "minLength": 3 },
+    "subject_id": { "type": "string", "minLength": 3 },
+    "source_ref": { "type": "string", "minLength": 3 },
+    "previous_resignature_id": { "type": "string", "minLength": 3 },
+    "current_position": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "changed_because": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "carry_forward": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "rejected_or_revised": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "unresolved_tension": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "explanation_scope": { "enum": ["material_change", "brief_unknown"] },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

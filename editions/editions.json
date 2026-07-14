@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "editions": {
+    "core": { "label": "Core Edition", "schema_version": 1, "profile": "strict", "condition_branch": "default" },
+    "continuity": { "label": "Continuity Edition", "schema_version": 1, "profile": "relaxed", "condition_branch": "memory_aware" },
+    "extended": { "label": "Extended Edition", "schema_version": 2, "profile": "modular", "condition_branch": "custom" }
+  }
+}

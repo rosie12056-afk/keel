@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://house-keel.dev/schemas/rule.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "rule_id", "body", "origin", "validation_status", "applicability", "caveats", "edition", "created_at"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "rule_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$" },
+    "body": { "type": "string", "minLength": 1, "maxLength": 8000 },
+    "origin": { "enum": ["house", "external", "joint", "unknown"] },
+    "validation_status": { "enum": ["proposed", "validating", "validated", "rejected", "retired"] },
+    "applicability": { "enum": ["house_specific", "multi_instance", "candidate_general"] },
+    "caveats": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "enum": ["interpretation_disputed", "single_instance_only", "edge_case_not_covered", "observation_limited"] }
+    },
+    "edition": { "enum": ["core", "continuity", "extended"] },
+    "grounding_statement": { "type": "string", "maxLength": 4000 },
+    "created_at": { "type": "string", "format": "date-time" }
+  },
+  "allOf": [{
+    "if": { "properties": { "validation_status": { "const": "validated" } }, "required": ["validation_status"] },
+    "then": { "properties": { "caveats": { "type": "array", "minItems": 1 } } }
+  }]
+}

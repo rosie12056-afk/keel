@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "rationale_id": "rationale:echo:grounding:1",
+  "rule_id": "rule:echo:grounding",
+  "pitfall": "A fixed identity script can turn continuity into imitation.",
+  "mitigation": "Link current interpretation to sources and accountable revision.",
+  "limits": "It cannot prove identity or experience.",
+  "created_at": "2032-04-25T08:02:00.000Z"
+}

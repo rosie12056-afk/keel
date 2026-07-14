@@ -1,0 +1,19 @@
+{
+  "name": "house-keel",
+  "version": "0.1.0-experimental.1",
+  "description": "Experimental rule lifecycle and resignature contracts for persistent agent identity material.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "private": false,
+  "scripts": {
+    "demo": "node demos/run.mjs",
+    "test": "node --test",
+    "scan:private": "node scripts/scan-private.mjs",
+    "check": "npm test && npm run demo && npm run scan:private"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "engines": { "node": ">=20" }
+}
