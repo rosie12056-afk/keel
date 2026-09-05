@@ -1,6 +1,6 @@
 {
   "name": "house-keel",
-  "version": "0.1.0-experimental.1",
+  "version": "0.1.0-experimental.2",
   "description": "Experimental rule lifecycle and resignature contracts for persistent agent identity material.",
   "type": "module",
   "license": "Apache-2.0",
@@ -15,5 +15,7 @@
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }
