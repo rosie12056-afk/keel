@@ -1,5 +1,7 @@
 # Keel
 
+Maintenance release `0.1.0-experimental.2` preserves the existing maturity and document profiles. See [CHANGELOG.md](CHANGELOG.md) for dependency changes and consumer lockfile guidance.
+
 Keel is an experimental, model-independent specification for versioned identity material, governed rules, later reinterpretation, and append-only rationale history in persistent agent systems.
 
 It does not provide a personality, prove identity, or claim consciousness. It gives implementations a way to preserve what was recorded, how a current position changed, what remains unresolved, and which limits apply to a rule.
